@@ -37,6 +37,8 @@ public class MyFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblTipoClase = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblMascaraRed = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora Subneteo v1.0");
@@ -85,6 +87,10 @@ public class MyFrame extends javax.swing.JFrame {
 
         lblTipoClase.setText("jLabel2");
 
+        jLabel2.setText("Mascara Red:");
+
+        lblMascaraRed.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -94,6 +100,10 @@ public class MyFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTipoClase, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMascaraRed, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -102,7 +112,9 @@ public class MyFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(lblTipoClase))
+                    .addComponent(lblTipoClase)
+                    .addComponent(jLabel2)
+                    .addComponent(lblMascaraRed))
                 .addContainerGap(217, Short.MAX_VALUE))
         );
 
@@ -139,8 +151,9 @@ public class MyFrame extends javax.swing.JFrame {
         Subneteo obj1 = new Subneteo(DireccionIP, subRedes);
         
         lblTipoClase.setText(obj1.obtenerClase());
+        lblMascaraRed.setText(obj1.mascaraSubRed());
         
-        JOptionPane.showMessageDialog(rootPane, "Mascara de red: "+obj1.mascaraSubRed());
+        //JOptionPane.showMessageDialog(rootPane, "Mascara de red: "+obj1.mascaraSubRed());
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
@@ -181,8 +194,10 @@ public class MyFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblMascaraRed;
     private javax.swing.JLabel lblTipoClase;
     private javax.swing.JTextField txtDireccionIP;
     private javax.swing.JTextField txtSubRedes;

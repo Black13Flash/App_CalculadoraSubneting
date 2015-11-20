@@ -87,7 +87,7 @@ public class Subneteo {
     // Clase D :  0 Se manejará en la GUI
     // Clase E :  0 Se manejará en la GUI
     //
-    public int mascaraSubRed(){
+    public String mascaraSubRed(){
         int subRedes = this.subRedes;
         int mascaraClase = Integer.parseInt(mascaraClase());
         int mascaraSubRed=0;
@@ -104,7 +104,7 @@ public class Subneteo {
             }
         }
         
-        return mascaraSubRed+mascaraClase;
+        return ""+(mascaraSubRed+mascaraClase);
     }
 
 }
