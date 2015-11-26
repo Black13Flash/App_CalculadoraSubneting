@@ -15,6 +15,8 @@ public class Subneteo {
     private String direccionIP;
     private int subRedes;
     
+    private int bitsMascara;
+    
     public Subneteo(String direccionIP,int subRedes) {
         this.direccionIP = direccionIP;
         this.subRedes = subRedes;
@@ -81,12 +83,6 @@ public class Subneteo {
     // Paso 3: Obtener la mascaraSubred a partir de la MascaraClase by JBY
     // Retorna int : MascaraSubred + MascaraClase
     //
-    // Clase A :  8
-    // Clase B : 16
-    // Clase C : 24
-    // Clase D :  0 Se manejará en la GUI
-    // Clase E :  0 Se manejará en la GUI
-    //
     public String mascaraSubRed(){
         int subRedes = this.subRedes;
         int mascaraClase = Integer.parseInt(mascaraClase());
@@ -104,7 +100,27 @@ public class Subneteo {
             }
         }
         
+        this.bitsMascara = mascaraSubRed; // agregando los bits encendidos
+        
         return ""+(mascaraSubRed+mascaraClase);
+    }
+    
+    // Paso 4: Otener el numero contador que saltará por cada subRed
+    // Ejemplo : Bits encendidos = 3 entonces retornará 32
+    //
+    // Con esto se podrá saltar de IP a otra IP
+    // 200.21.0.0 -> 200.21.0.32 -> 200.21.0.64 -> 200.21.0.96
+    public int contadorSubRedes(){
+        int bits= this.bitsMascara;
+        int binario=128;
+        int resto=0;
+        
+        for (int i = 1; i < bits; i++) {
+            binario = binario / 2;
+            resto = binario;
+        }
+        
+        return resto;
     }
 
 }
