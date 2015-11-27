@@ -50,6 +50,11 @@ public class MyFrame extends javax.swing.JFrame {
 
         txtDireccionIP.setText("Direccion IP");
         txtDireccionIP.setToolTipText("");
+        txtDireccionIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionIPActionPerformed(evt);
+            }
+        });
 
         txtSubRedes.setText("SubRedes");
 
@@ -174,6 +179,10 @@ public class MyFrame extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(rootPane, "Numero de octeto: "+obj1.contadorSubRedes());
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtDireccionIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionIPActionPerformed
+       txtDireccionIP.setText("");//blanco
+    }//GEN-LAST:event_txtDireccionIPActionPerformed
 
     /**
      * @param args the command line arguments
