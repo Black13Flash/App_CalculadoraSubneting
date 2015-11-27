@@ -181,7 +181,7 @@ public class MyFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtDireccionIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionIPActionPerformed
-       txtDireccionIP.setText("");//blanco
+       txtDireccionIP.setText("");//blanco prueba de que esto ahora si va al master
     }//GEN-LAST:event_txtDireccionIPActionPerformed
 
     /**
